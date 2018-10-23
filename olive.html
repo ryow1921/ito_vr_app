@@ -9,9 +9,9 @@
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
     <script src="aframe-gui-master/examples/js/fontfaceobserver.js"></script>
     <script src="aframe-gui-master/examples/js/aframe-gui.js"></script>
-    <!script>
+    <!--<script>
     window.onload = function() { var itemContainer = document.getElementById('item-container'); console.log(itemContainer); console.log(itemContainer.getAttribute('position')); itemContainer.setAttribute('position', '0 0 0'); console.log(itemContainer.getAttribute('position')); };
-    <!/script>
+    </script>-->
 </head>
 
 <body>
@@ -19,7 +19,7 @@
     <!h1>
     <!/h1>
     <!p>
-    <!/p>  
+    <!/p>
 -->
     <a-scene id='main-scene'>
         <a-camera position="0 0 0">
@@ -32,9 +32,9 @@
         </a-camera>
 
 
-        <a-sky id="sky" src="オリーブ園.JPG" rotation="0 170 0"></a-sky>
+        <a-sky id="sky" src="./img/olive/sky.jpg" rotation="0 170 0"></a-sky>
         <a-sphere id="selif" position="-17.136 -6.591 12.612" color="blue" opacity ='0'></a-sphere>
-        
+
         <a-plane id="my-plane" color="black" scale="3 1 1" rotation="0 0 0" position="2 2 2"></a-plane>
 
     </a-scene>
