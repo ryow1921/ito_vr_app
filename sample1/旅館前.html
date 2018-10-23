@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="A-Frame Panorama Sample">
+    <title>360 photo</title>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="aframe-gui-master/examples/js/fontfaceobserver.js"></script>
+    <script src="aframe-gui-master/examples/js/aframe-gui.js"></script>
+    <!--
+    <script>
+    window.onload = function() { var itemContainer = document.getElementById('item-container'); console.log(itemContainer); console.log(itemContainer.getAttribute('position')); itemContainer.setAttribute('position', '0 0 0'); console.log(itemContainer.getAttribute('position')); };
+    </script>
+-->
+</head>
+
+<body>
+    <!--
+    <!h1>
+    <!/h1>
+    <!p>
+    <!/p>  
+-->
+    <a-scene id="main-scene">
+        <a-camera position="0 0 0">
+            <a-entity cursor="fuse: true; fuseTimeout: 1000" position="0 0 -1" geometry="primitive: ring" scale="0.03 0.03 0.03" material="color: blue; shader: flat">
+                <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" fill="none" from="0.03 0.03 0.03" to="0.001 0.001 0.001"></a-animation>
+                <!--
+                <a-gui-flex-container  flex-direction="column" justify-content="center" align-items="normal" component-padding="0.1" opacity="0.7" width="8" height="50" position="57 2.5 -4" rotation="0 0 0">
+                <!/a-gui-flex-container>
+-->
+            </a-entity>
+        </a-camera>
+
+
+        <a-sky id="sky" src="旅館前.JPG" rotation="0 170 0"></a-sky>
+
+        <a-sphere position="0 6 -7" src=旅館櫓.jpg id="sample-obj"></a-sphere>
+
+        <a-sphere id="selif" position="15.936 0.302 -7.469" color="blue" opacity ='0'></a-sphere>
+
+        <!-- <a-text text="align: center;width: 6; value:hello world" position="2 4 -6"></a-text>
+-->
+    </a-scene>
+    <script type="text/javascript">
+        /* var skyElement = document.getElementById("sky");
+                                             skyElement.setAttribute("src", "旅館櫓.JPG");*/
+        /*var clickElement = document.getElementById("sample-obj");
+        clickElement.addEventListener("click", function() {
+            location.href = "PC/Windows(C:)/ProgramFiles(x86)/samples/ja/Getting Started/a-frame-probject/sample1/map4.html";
+            // 別ファイルに飛べない*/
+        var count = 0;
+        if (count == 0) {
+            var clickElement = document.getElementById("selif");
+            clickElement.addEventListener("click", function() {
+                var plane = document.createElement('a-plane');
+
+                plane.setAttribute('id', 'my-plane');
+                plane.setAttribute('color', 'black');
+                plane.setAttribute('scale', '5 2 1');
+                plane.setAttribute('rotation', '0 -50 0');
+                plane.setAttribute('position', '21.201 0.302 -4.554');
+                var scene = document.getElementById('main-scene');
+                scene.appendChild(plane);
+                var text = document.createElement('a-text');
+                text.setAttribute('id', 'my-text');
+                text.setAttribute('text', 'align: center;width: 10;value:selif')
+                text.setAttribute('position', '12.570 0.216 -3.554');
+                text.setAttribute('rotation', '0 -50 0');
+                //  text.setAttribute('rotation', '-90 0 0');
+                var scene = document.getElementById('main-scene');
+                scene.appendChild(text);
+                count = 1;
+            })
+        };
+    </script>
+</body>
+
+</html>
