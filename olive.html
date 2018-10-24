@@ -35,8 +35,6 @@
         <a-sky id="sky" src="./img/olive/sky.jpg" rotation="0 170 0"></a-sky>
         <a-sphere id="selif" position="-17.136 -6.591 12.612" color="blue" opacity ='0'></a-sphere>
 
-        <a-plane id="my-plane" color="black" scale="3 1 1" rotation="0 0 0" position="2 2 2"></a-plane>
-
     </a-scene>
     <script type="text/javascript">
         /* var skyElement = document.getElementById("sky");
@@ -50,7 +48,7 @@
             var clickElement = document.getElementById("selif");
             clickElement.addEventListener("click", function() {
                 console.log('click');
-                var plane = document.createElement('a-plane');
+              /*  var plane = document.createElement('a-plane');
 
                 plane.setAttribute('id', 'my-plane');
                 plane.setAttribute('color', 'red');
@@ -60,12 +58,12 @@
                 plane.setAttribute('position', '-17.136 -6.591 12.612');
                 var scene = document.getElementById('main-scene');
                 scene.appendChild(plane);
+                */
                 var text = document.createElement('a-text');
                 text.setAttribute('id', 'my-text');
-                text.setAttribute('text', 'align: center;width: 6;value:selif');
-                plane.setAttribute('side', 'double');
-                text.setAttribute('position', '-17.136 -6.591 12.612');
-                text.setAttribute('rotation', '-30 -15 0');
+                text.setAttribute('text', 'align: center;width: 8;value:This is the International exchange festival of Ito city and Italy.');
+                text.setAttribute('position', '-7.546 -1.713 2.692');
+                text.setAttribute('rotation', '0 -250 0');
                 var scene = document.getElementById('main-scene');
                 scene.appendChild(text);
                 count = 1;

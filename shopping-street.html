@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
+    
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="A-Frame Panorama Sample">
     <title>商店街</title>
@@ -21,7 +21,8 @@
     <!p>
     <!/p>
 -->
-    <a-scene>
+    
+    <a-scene id ="main-scene">
         <a-camera position="0 0 0">
             <a-entity cursor="fuse: true; fuseTimeout: 1000" position="0 0 -1" geometry="primitive: ring" scale="0.03 0.03 0.03" material="color: blue; shader: flat">
                 <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" fill="none" from="0.03 0.03 0.03" to="0.001 0.001 0.001"></a-animation>
@@ -36,14 +37,39 @@
 
         <a-sky id="sky" src="img/shopping-street/sky.jpg" rotation="0 170 0"></a-sky>
         <a-sphere position="0 6 -7" src ="img/olive/sky.jpg" id="olive"></a-sphere>
+        
+    <a-sphere position="2.444 -4.224 9.837" color ="blue" id="selif" opacity="0"></a-sphere>
 
     </a-scene>
     <script type="text/javascript">
+        var count = 0;
         var clickElement = document.getElementById("olive");
       clickElement.addEventListener("click", function() {
         location.href = './olive.html';
         
-        }, false);
+        }, );
+        
+        if (count == 0) {
+            var clickElement = document.getElementById("selif");
+            clickElement.addEventListener("click", function() {
+                var plane = /*document.createElement('a-plane');
+                plane.setAttribute('id', 'my-plane');
+                plane.setAttribute('color', 'black');
+                plane.setAttribute('scale', '13.5 2 1');
+                plane.setAttribute('rotation', '0 -50 0');
+                plane.setAttribute('position', '21.625 0.302 -1.923');
+                var scene = document.getElementById('main-scene');
+                scene.appendChild(plane);*/
+                var text = document.createElement('a-text');
+                text.setAttribute('id', 'my-text');
+                text.setAttribute('text', 'align: center;width: 10;value:Welcome to the shopping area. We selling Daifuku, Japanese sweets!')
+                text.setAttribute('position', '-3.691 -3.288 9.837');
+                text.setAttribute('rotation', '0 -180 0');
+                var scene = document.getElementById('main-scene');
+                scene.appendChild(text);
+                count = 1;
+            })
+        };
 
     </script>
 </body>
