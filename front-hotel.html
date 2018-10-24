@@ -5,7 +5,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="A-Frame Panorama Sample">
-  <title>360 photo</title>
+  <title>旅館前</title>
   <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
   <script src="aframe-gui-master/examples/js/fontfaceobserver.js"></script>
   <script src="aframe-gui-master/examples/js/aframe-gui.js"></script>
@@ -37,7 +37,7 @@
 
     <a-sky id="sky" src="./img/front-hotel/sky.jpg" rotation="0 170 0"></a-sky>
 
-    <a-sphere position="0 6 -7" src=旅館櫓.jpg id="sample-obj"></a-sphere>
+    <a-sphere position="0 6 -7" src=./img/shopping-street/sky.jpg id="shopping-street"></a-sphere>
 
     <a-sphere id="selif" position="15.936 0.302 -7.469" color="blue" opacity='0'></a-sphere>
 
@@ -53,9 +53,9 @@
         // 別ファイルに飛べない*/
     var count = 0;
     if (count == 0) {
-      var clickElement = document.getElementById("selif");
+      var clickElement = document.getElementById("shopping-street");
       clickElement.addEventListener("click", function() {
-        location.href = './olive.html';
+        location.href = './shopping-street.html';
         // var plane = document.createElement('a-plane');
         // plane.setAttribute('id', 'my-plane');
         // plane.setAttribute('color', 'black');
