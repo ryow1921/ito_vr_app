@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="A-Frame Panorama Sample">
-    <title>360 photo</title>
+    <title>旅館櫓</title>
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
     <script src="aframe-gui-master/examples/js/fontfaceobserver.js"></script>
     <script src="aframe-gui-master/examples/js/aframe-gui.js"></script>
@@ -32,39 +32,21 @@
 
 
         <a-sky id="sky" src="./img/scaffold/sky.jpg" rotation="0 170 0"></a-sky>
-        <a-sphere position="0 6 -7" src="オリーブ園.JPG" id="sample-obj"></a-sphere>
+        
+        <a-sphere position="0 6 -7" src="./img/front-hotel/sky.jpg" id="front-hotel"></a-sphere>
+        
+        <a-text text="align: center;width: 6; value:Today, I'm atourism ambassador of Ito city.
+Let'go to Ito city!" position = "2 4 -6"></a-text>
+        
     </a-scene>
     <script type="text/javascript">
-        /* var skyElement = document.getElementById("sky");
-                                                     skyElement.setAttribute("src", "旅館櫓.JPG");*/
-        /*var clickElement = document.getElementById("sample-obj");
-        clickElement.addEventListener("click", function() {
-            location.href = "PC/Windows(C:)/ProgramFiles(x86)/samples/ja/Getting Started/a-frame-probject/sample1/map4.html";
-            // 別ファイルに飛べない*/
-        var count = 0;
-        if (count == 0) {
-            var clickElement = document.getElementById("selif");
-            clickElement.addEventListener("click", function() {
-                var plane = document.createElement('a-plane');
-
-                plane.setAttribute('id', 'my-plane');
-                plane.setAttribute('color', 'black');
-                plane.setAttribute('scale', '3 1 1');
-                plane.setAttribute('rotation', '-30 -15 0');
-                plane.setAttribute('position', '4.648 -3.945 -4');
-                var scene = document.getElementById('main-scene');
-                scene.appendChild(plane);
-                var text = document.createElement('a-text');
-                text.setAttribute('id', 'my-text');
-                text.setAttribute('text', 'align: center;width: 6;value:selif')
-                text.setAttribute('position', '2.738 -2.873 -3');
-                text.setAttribute('rotation', '-30 -15 0');
-                //  text.setAttribute('rotation', '-90 0 0');
-                var scene = document.getElementById('main-scene');
-                scene.appendChild(text);
-                count = 1;
+        var clickElement = document.getElementById("front-hotel");
+      clickElement.addEventListener("click", function() {
+        location.href = './front-hotel.html';
+        
+        
             })
-        };
+        ;
     </script>
 </body>
 
