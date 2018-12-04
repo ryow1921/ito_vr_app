@@ -51,7 +51,7 @@
         clickElement.addEventListener("click", function(event) {
             var isClicked = clickElement.getAttribute('is-clicked');
             if (isClicked) return;
-            clickElement.setAttribute('is-clicked', false);
+            clickElement.setAttribute('is-clicked', true);
             var text = document.createElement('a-text');
             text.setAttribute('id', 'my-text');
             text.setAttribute('text', 'align: center;width: 10;value:Welcome to the shopping area. We selling Daifuku, Japanese sweets!')
