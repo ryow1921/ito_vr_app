@@ -28,14 +28,20 @@
         </a-camera>
         
         <a-sky id="sky" src="./img/Bridge.jpg" rotation="0 160 0"></a-sky>
-            
-        <a-sphere position="0 6 -7" src="./img/Bridge.jpg" id="Bridge"></a-sphere>
         
-        <a-text text="align: center;width:30; value:Sightseeing in Hungary VR" position = "0 2 -6"><a-text>
+        <a-plane position="0 0 -6.1" color="#1e90ff" height="6" width="20"></a-plane>
+        
+        
+        <a-text text="align: center;width:30; value:Sightseeing in Hungary VR Game" position = "0 2 -6"></a-text>       
+        <a-text text="align: center;width:20; value:Scene1,2:Quiz" position = "0 0.5 -6"></a-text>
+        <a-text text="align: center;width:20; value:Scene3,4,5:Where's  Object?" position = "0 -0.5 -6"></a-text>
+        <a-text text="align: center;width:10; value:Start watching [START] for 1second" position = "0 -1.2 -6"></a-text>
+        
+        <a-plane position="0 -2.2 -6" scale="3 1 1" src="./img/startButton.jpg" id="start"></a-plane>
         
     </a-scene>
     <script type="text/javascript">
-        var clickElement = document.getElementById("Bridge");
+        var clickElement = document.getElementById("start");
       clickElement.addEventListener("click", function() {
         location.href = './Bridge.html';
         
