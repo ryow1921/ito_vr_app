@@ -27,17 +27,7 @@
         </a-assets>
     </a-scene>
     <script type="text/javascript">
-     window.addEventListener('load', function () {
-  var scene = document.querySelector('a-scene');
-  if(!scene.isMobile) return;
-  if (scene.hasLoaded && scene) {
-    scene.enterVR();
-  } else {
-    scene.addEventListener('renderstart', function () {
-      scene.enterVR();
-    });
-  }
-});
+     
         var quizStartElement = document.getElementById("quiz-start");
         quizStartElement.addEventListener("click", function() {
             quizStartElement.parentNode.removeChild(quizStartElement);
