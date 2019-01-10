@@ -27,12 +27,13 @@
         </a-assets>
     </a-scene>
     <script type="text/javascript">
-        window.addEventListener('load', function () {
+     window.addEventListener('load', function () {
   var scene = document.querySelector('a-scene');
-  if (scene.hasLoaded) {
+  if(!scene.isMobile) return;
+  if (scene.hasLoaded && scene) {
     scene.enterVR();
   } else {
-    scene.addEventListener('loaded', function () {
+    scene.addEventListener('renderstart', function () {
       scene.enterVR();
     });
   }
