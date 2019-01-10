@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="A-Frame Panorama Sample">
-    <title>鎖橋</title>
+    <title>title</title>
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
     <script src="aframe-gui-master/examples/js/fontfaceobserver.js"></script>
     <script src="aframe-gui-master/examples/js/aframe-gui.js"></script>
@@ -13,41 +13,43 @@
 </head>
 
 <body>
-    <a-scene id="main-scene" auto-enter-vr="display:all">
+
+    <a-scene id="main-scene">
         <a-camera position="0 0 0">
             <a-entity cursor="fuse: true; fuseTimeout: 2000" position="0 0 -1" geometry="primitive: ring" scale="0.03 0.03 0.03" material="color: blue; shader: flat">
                 <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" fill="none" from="0.03 0.03 0.03" to="0.001 0.001 0.001"></a-animation>
+                
             </a-entity>
         </a-camera>
+        
         <a-sky id="sky" src="./img/Bridge.jpg" rotation="0 160 0"></a-sky>
-
-        <a-box id="quiz-start" position="-5 0 -3" src="#speak" opacity='1' scale="1 1 0" rotation="0 50 0"></a-box>
-        <a-assets>
-            <img id="speak" src="./img/speak.jpg">
-        </a-assets>
+        
+        <a-plane class = '1' position="0 0 -6.1" color="#1e90ff" height="6" width="20"></a-plane>
+        <a-text class = '1' text="align: center;width:30; value:Sightseeing in Hungary VR Game" position = "0 2 -6"></a-text>       
+        <a-text class = '1' text="align: center;width:20; value:Scene1,2:Quiz" position = "0 0.5 -6"></a-text>
+        <a-text class = '1' text="align: center;width:20; value:Scene3,4:Where's  Object?" position = "0 -0.5 -6"></a-text>
+        <a-text class = '1' text="align: center;width:10; value:Start watching [START] for 1second" position = "0 -1.2 -6"></a-text>
+        
+        <a-plane class = '1' position="0 -2.2 -6" scale="3 1 1" src="./img/startButton.jpg" id="start"></a-plane>
+        
     </a-scene>
     <script type="text/javascript">
-        window.addEventListener('load', function () {
-  var scene = document.querySelector('a-scene');
-  if (scene.hasLoaded) {
-    scene.enterVR();
-  } else {
-    scene.addEventListener('loaded', function () {
-      scene.enterVR();
-    });
-  }
-});
+        var clickElement = document.getElementById("start");
+        var firstElement = Array.from(document.getElementsByClassName("1");
+      clickElement.addEventListener("click", function() {
+        firstElement.parentNode.removeChild(firstElement);
+            var key = document.createElement('a-box');
+            key.setAttribute(id,'Event-start');
+            key.setAttribute(position,'-5 0 -3');
+            key.setAttribute(src,'./image/speak.jpg');
+            key.setAttribute(scale,'1 1 0');
+            key.setAttribute(rotation,'0 50 0');
+         });
         var quizStartElement = document.getElementById("quiz-start");
         quizStartElement.addEventListener("click", function() {
             quizStartElement.parentNode.removeChild(quizStartElement);
             addQuizPannel(document, 'main-scene', ['chain bridge', 'Szechenyi thermal bath', 'BudaCastle'], 'this is a famous sightseeing spot in Hungary. What is the name of this sightseeing spot?','./Ferris wheel.html');
         });
-        
-
-        
-        
-
-      
     </script>
 </body>
 

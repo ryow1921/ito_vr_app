@@ -13,12 +13,7 @@
 </head>
 
 <body>
-    <!--
-    <!h1>
-    <!/h1>
-    <!p>
-    <!/p>
--->
+
     <a-scene id="main-scene">
         <a-camera position="0 0 0">
             <a-entity cursor="fuse: true; fuseTimeout: 2000" position="0 0 -1" geometry="primitive: ring" scale="0.03 0.03 0.03" material="color: blue; shader: flat">
@@ -27,16 +22,13 @@
             </a-entity>
         </a-camera>
         
+        
         <a-sky id="sky" src="./img/Bridge.jpg" rotation="0 160 0"></a-sky>
         
         <a-plane position="0 0 -6.1" color="#1e90ff" height="6" width="20"></a-plane>
-        
-        
         <a-text text="align: center;width:30; value:Sightseeing in Hungary VR Game" position = "0 2 -6"></a-text>       
         <a-text text="align: center;width:20; value:Scene1,2:Quiz" position = "0 0.5 -6"></a-text>
-
         <a-text text="align: center;width:20; value:Scene3,4:Where's  Object?" position = "0 -0.5 -6"></a-text>
-
         <a-text text="align: center;width:10; value:Start watching [START] for 1second" position = "0 -1.2 -6"></a-text>
         
         <a-plane position="0 -2.2 -6" scale="3 1 1" src="./img/startButton.jpg" id="start"></a-plane>
@@ -46,10 +38,8 @@
         var clickElement = document.getElementById("start");
       clickElement.addEventListener("click", function() {
         location.href = './Bridge.html';
+            });
         
-        
-            })
-        ;
     </script>
 </body>
 
