@@ -9,39 +9,33 @@
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
     <script src="aframe-gui-master/examples/js/fontfaceobserver.js"></script>
     <script src="aframe-gui-master/examples/js/aframe-gui.js"></script>
-
+    <script src="lib/game.js"></script>
 </head>
 
 <body>
-    <!--
-    <!h1>
-    <!/h1>
-    <!p>
-    <!/p>
--->
+
     <a-scene id="main-scene">
         <a-camera position="0 0 0">
             <a-entity cursor="fuse: true; fuseTimeout: 1000" position="0 0 -1" geometry="primitive: ring" scale="0.03 0.03 0.03" material="color: blue; shader: flat">
                 <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" fill="none" from="0.03 0.03 0.03" to="0.001 0.001 0.001"></a-animation>
-               
             </a-entity>
         </a-camera>
 
-
         <a-sky id="sky" src="./img/kecskemet.jpg" rotation="0 170 0"></a-sky>
-        
-        <a-sphere position="0 6 -7" src="./img/Ferris wheel.jpg" id="Ferris wheel"></a-sphere>
-        
-        
+        <a-box id="Event-start" position="-5 0 -3" src="#speak" opacity='1' scale="1 1 0" rotation="0 50 0"></a-box>
+
+        <a-assets>
+            <img id="speak" src="./img/speak.jpg">
+        </a-assets>
+
     </a-scene>
     <script type="text/javascript">
-        var clickElement = document.getElementById("Ferris wheel");
-      clickElement.addEventListener("click", function() {
-        location.href = './Ferris wheel.html';
-        
-        
-            })
-        ;
+        var EventStartElement = document.getElementById("Event-start");
+        EventStartElement.addEventListener("click", function() {
+                    EventStartElement.parentNode.removeChild(EventStartElement);
+            itemfound(document, "main-scene", './heropark.html', 'Here is Kecskemet.Where is the red car?', '-8.353 -0.727 7.303');
+                });
+                
     </script>
 </body>
 
