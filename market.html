@@ -25,19 +25,23 @@
 
 
         <a-sky id="sky" src="./img/market.jpg" rotation="0 170 0"></a-sky>
+
         <a-box id="Event-start" position="-5 0 -3" src="#speak" opacity='1' scale="1 1 0" rotation="0 50 0"></a-box>
         <a-assets>
             <img id="speak" src="./img/speak.jpg">
         </a-assets>
 
+
     </a-scene>
 
     <script type="text/javascript">
+
         var EventStartElement = document.getElementById("Event-start");
         EventStartElement.addEventListener("click", function() {
             EventStartElement.parentNode.removeChild(EventStartElement);
             itemfound(document, "main-scene", './market.html', 'Here is market.where is the red car?', '-8.353 -0.727 7.303');
         });
+
 
     </script>
 </body>
